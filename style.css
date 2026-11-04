@@ -175,3 +175,374 @@ justify-content: center;
 padding: 30px   20px;
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================================
+ NEBULA DEFENDER — style.css
+   ============================================================ */
+:root {
+  --bg: #020617;
+  --panel: rgba(15, 23, 42, 0.6);
+  --border: #1e293b;
+  --border-hover: #64748b;
+  --text: #f1f5f9;
+  --muted: #94a3b8;
+  --dim: #64748b;
+  --sky: #38bdf8;
+  --violet: #c4b5fd;
+  --gold: #fde047;
+  --green: #34d399;
+  --amber: #fcd34d;
+  --rose: #fb7185;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+code,
+kbd {
+  font-family: var(--mono);
+}
+code {
+  color: #fef08a;
+}
+/* ---------- fundo ---------- */
+.bg-glow {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at top, rgba(99, 102, 241, 0.18), transparent 55%),
+    radial-gradient(ellipse at bottom right, rgba(219, 39, 119, 0.12), transparent 55%);
+  z-index: 0;
+}
+.topbar,
+.layout,
+.footer {
+  position: relative;
+  z-index: 1;
+}
+/* ---------- topo ---------- */
+.topbar {
+  border-bottom: 1px solid rgba(30, 41, 59, 0.8);
+}
+.topbar,
+.layout {
+  max-width: 1152px;
+  margin: 0 auto;
+  padding: 16px 24px;
+}
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.brand h1 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.brand p {
+  margin: 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+.logo {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #38bdf8, #7c3aed);
+  box-shadow: 0 10px 25px rgba(139, 92, 246, 0.3);
+  color: #fff;
+}
+.logo svg {
+  width: 24px;
+  height: 24px;
+}
+.actions {
+  display: flex;
+  gap: 8px;
+}
+/* ---------- botões ---------- */
+.btn {
+  appearance: none;
+  border: 1px solid #334155;
+  background: #0f172a;
+  color: #cbd5e1;
+  font: 600 12px var(--sans);
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition:
+    border-color 0.15s,
+    color 0.15s,
+    filter 0.15s;
+}
+.btn:hover:not(:disabled) {
+  border-color: var(--border-hover);
+  color: #fff;
+}
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.btn-primary {
+  border: none;
+  background: linear-gradient(90deg, #0ea5e9, #7c3aed);
+  color: #fff;
+  font-weight: 700;
+  padding: 7px 18px;
+  box-shadow: 0 10px 25px rgba(124, 58, 237, 0.3);
+}
+.btn-primary:hover:not(:disabled) {
+  filter: brightness(1.1);
+}
+.btn-primary.hidden {
+  visibility: hidden;
+}
+/* ---------- layout ---------- */
+.layout {
+  display: grid;
+  gap: 24px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+@media (min-width: 1024px) {
+  .layout {
+    grid-template-columns: auto 1fr;
+  }
+}
+/* ---------- palco do jogo ---------- */
+.stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.frame {
+  padding: 8px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  box-shadow: 0 25px 50px -12px rgba(30, 27, 75, 0.6);
+}
+#game {
+  display: block;
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  aspect-ratio: 480 / 720;
+  border-radius: 12px;
+  touch-action: none;
+  outline: none;
+  cursor: crosshair;
+}
+@media (min-width: 1024px) {
+  #game {
+    width: auto;
+    height: min(80vh, 720px);
+  }
+}
+.stage-bar {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--muted);
+}
+.status {
+  color: var(--text);
+}
+.status[data-state="playing"] {
+  color: var(--green);
+}
+.status[data-state="paused"] {
+  color: var(--amber);
+}
+.status[data-state="gameover"] {
+  color: var(--rose);
+}
+/* ---------- painel lateral ---------- */
+.side {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+@media (min-width: 640px) {
+  .stats {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.stat {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--panel);
+}
+.stat-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--dim);
+}
+.stat-value {
+  margin-top: 4px;
+  font: 700 20px var(--mono);
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.gold {
+  color: var(--gold);
+}
+.violet {
+  color: var(--violet);
+}
+.sky {
+  color: var(--sky);
+}
+.card {
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--panel);
+}
+.card h3 {
+  margin: 0 0 12px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+.card ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  color: #cbd5e1;
+}
+.grid-2 {
+  display: grid;
+  gap: 8px;
+}
+@media (min-width: 640px) {
+  .grid-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+kbd {
+  display: inline-block;
+  padding: 1px 6px;
+  border-radius: 4px;
+  border: 1px solid #334155;
+  background: #1e293b;
+  color: #e2e8f0;
+  font-size: 11px;
+}
+.enemies li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+.enemies i {
+  flex-shrink: 0;
+  width: 12px;
+  height: 12px;
+  margin-top: 5px;
+  border-radius: 50%;
+  background: var(--c);
+  box-shadow: 0 0 10px var(--c);
+}
+.enemies b {
+  color: #f1f5f9;
+}
+.enemies span {
+  color: var(--muted);
+}
+.powers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.powers li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: rgba(2, 6, 23, 0.6);
+}
+.powers b {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  background: var(--c);
+  color: #020617;
+  font: 900 12px var(--mono);
+}
+.hint {
+  margin: 12px 0 0;
+  font-size: 12px;
+  color: var(--dim);
+}
+/* ---------- rodapé ---------- */
+.footer {
+  border-top: 1px solid rgba(30, 41, 59, 0.8);
+  padding: 16px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--dim);
+}

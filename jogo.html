@@ -1,1 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THAIS</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!--header é a parte do cabeçalho do site, é o topo da página-->
+<header class="cabecalho-itens">
+<img class="cabecalho_imagem" src="Design sem nome (2).png" alt="Logo da
+Página">
+<h1 class="titulo_site">THAIS</h1>
+<div class="sociais">
+<img class="sociais" src="whatsapp.png" alt="Logo do Whats da
+Escola">
+<img class="sociais" src="facebook.png" alt="Facebook da
+Escola">
+<img class="sociais" src="instagram.png" alt="instagram da
+Escola">
+</div>
+</header>
+<!--Menu-->
+<ul>
+  <li><a href="index.html">Inicio</a></li>
+  <li><a href="amigos.html">Amigos</a></li>
+  <li><a href="video.html">Video</a></li>
+  <li><a href="jogo.html">Video</a></li>
+</ul>
+
+<!--jogo-->
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nebula Defender</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="bg-glow" aria-hidden="true"></div>
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 2l5 14-5-3-5 3z" />
+          </svg>
+        </div>
+        <div>
+          <h1>Nebula Defender</h1>
+          <p>Jogo em <code>script.js</code> puro · HTML + CSS + Canvas 2D</p>
+        </div>
+      </div>
+      <div class="actions">
+        <button id="btn-mute" class="btn">🔊 Som on</button>
+        <button id="btn-pause" class="btn" disabled>⏸ Pausar</button>
+      </div>
+    </header>
+    <main class="layout">
+      <!-- Área do jogo -->
+      <section class="stage">
+        <div class="frame">
+          <canvas id="game" width="480" height="720" tabindex="0" aria-label="Área do jogo Nebula Defender"></canvas>
+        </div>
+        <div class="stage-bar">
+          <span>Status: <strong id="status" class="status">No menu</strong></span>
+          <button id="btn-primary" class="btn btn-primary">Começar</button>
+        </div>
+      </section>
+      <!-- Painel lateral -->
+      <aside class="side">
+        <div class="stats">
+          <div class="stat">
+            <span class="stat-label">Pontuação</span>
+            <span id="score" class="stat-value">0</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Recorde</span>
+            <span id="highscore" class="stat-value gold">0</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Onda</span>
+            <span id="wave" class="stat-value violet">—</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Vidas</span>
+            <span id="lives" class="stat-value sky">♥♥♥</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Controles</h3>
+          <ul class="grid-2">
+            <li><kbd>W A S D</kbd> ou <kbd>← ↑ ↓ →</kbd> mover</li>
+            <li><kbd>Espaço</kbd> atirar (segure)</li>
+            <li><kbd>Enter</kbd> começar / reiniciar</li>
+            <li><kbd>P</kbd> ou <kbd>Esc</kbd> pausar</li>
+            <li><kbd>M</kbd> ligar/desligar som</li>
+            <li>📱 Toque e arraste: move e atira</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Inimigos</h3>
+          <ul class="grid-2 enemies">
+            <li><i style="--c:#f97316"></i><span><b>Drone</b> — Desce em linha reta. Frágil.</span></li>
+            <li><i style="--c:#a855f7"></i><span><b>Zigzag</b> — Oscila para os lados.</span></li>
+            <li><i style="--c:#ef4444"></i><span><b>Atirador</b> — Para e mira em você.</span></li>
+            <li><i style="--c:#22c55e"></i><span><b>Tanque</b> — Lento, mas resistente.</span></li>
+            <li><i style="--c:#facc15"></i><span><b>Kamikaze</b> — Persegue sua nave.</span></li>
+            <li><i style="--c:#e11d48"></i><span><b>Chefe</b> — A cada 5 ondas. 3 padrões de tiro.</span></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Power-ups</h3>
+          <ul class="powers">
+            <li><b style="--c:#38bdf8">T</b> Tiro Triplo</li>
+            <li><b style="--c:#f472b6">R</b> Tiro Rápido</li>
+            <li><b style="--c:#34d399">S</b> Escudo</li>
+            <li><b style="--c:#f87171">H</b> +1 Vida</li>
+            <li><b style="--c:#fbbf24">B</b> Bomba</li>
+          </ul>
+          <p class="hint">
+            Dica: abater inimigos em sequência aumenta o <span class="gold">combo</span> (até x8). Levar dano zera o
+            combo.
+          </p>
+        </div>
+      </aside>
+    </main>
+    <footer class="footer">
+      Toda a lógica está em <code>script.js</code> — física, ondas, inimigos, chefes, partículas e som (Web Audio).
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--Seção rodapé é a parte final da paragrafo 3 da página-->
+<footer class="escola">
+<img class="logo_rodape" src="logo_nossa_escola.png" alt="Logo da Escola">
+<h2 class="escola-título">Mais informações entre em contato<a class="link"
+
+href="https://wa.me/5541999999999"> 41 995768500 </a></h2>
+<p></p>
+<p>©2024 | Curso de ADS | Todos os Direitos Reservados.
+Política de Privacidade | Proteção de dados | Encarregado de dados</p>
+<p> </p>
+</footer>
+</body>
+</html>
+
 
