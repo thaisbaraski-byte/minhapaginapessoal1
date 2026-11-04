@@ -169,11 +169,9 @@ ul li a:hover {
 
 
 .video { 
-
-display:flex;
-justify-content:center;
+display: flex;
+justify-content: center;
 padding:30px 20px;
-
 }
 
 
